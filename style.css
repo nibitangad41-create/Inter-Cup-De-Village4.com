@@ -1,0 +1,72 @@
+/* MOBILE FIRST LAYOUT */
+:root{
+  --primary:#ff4c4c;
+  --bg:#11b8e2;
+  --card:#ffffff;
+  --muted:#666;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter, "Segoe UI", system-ui, Roboto, Arial; background:var(--bg); color:#111}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:#111;color:white}
+.brand{font-weight:700;font-size:16px;display:flex;gap:8px;align-items:center}
+.hamburger{background:transparent;border:none;color:white;font-size:22px}
+
+.mobile-nav{display:flex;flex-direction:column;padding:10px;background:#1e1e1e}
+.mobile-nav .nav-item{color:white;text-decoration:none;padding:10px;border-radius:8px;background:#2a2a2a;margin-bottom:8px;display:block}
+.mobile-nav .nav-item.active, .mobile-nav .nav-item:hover{background:var(--primary)}
+.accordion{background:#2a2a2a;color:white;padding:10px;border:none;border-radius:8px;margin-bottom:6px;text-align:left;display:flex;justify-content:space-between;align-items:center}
+.panel{display:none;flex-direction:column;margin-bottom:8px}
+.panel a{background:#333;color:white;padding:8px;border-radius:6px;margin:6px 0;text-decoration:none}
+
+.search-row{display:flex;gap:6px;margin-top:8px}
+.search-row input{flex:1;padding:8px;border-radius:6px;border:0;outline:none}
+.search-row button{background:var(--primary);border:none;padding:8px;border-radius:6px;color:white}
+
+/* MAIN */
+main{padding:16px}
+.page{display:none;background:var(--card);padding:14px;border-radius:10px;margin-bottom:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.page.active{display:block}
+h1{font-size:18px;margin:0 0 8px 0}
+p{margin:0 0 8px 0;color:var(--muted)}
+
+/* Table */
+.table-wrapper{overflow-x:auto;border-radius:8px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px;text-align:center;border-bottom:1px solid #eee}
+th{background:var(--primary);color:white;position:sticky;top:0}
+tbody tr:nth-child(odd){background:#fff}
+tbody tr:nth-child(even){background:#fafafa}
+
+/* Fixtures list */
+.fixtures-list{list-style:none;padding:0;margin:0}
+.fixtures-list li{padding:10px;border-radius:8px;background:#fff;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 8px rgba(0,0,0,0.03)}
+.team{display:flex;gap:8px;align-items:center;font-weight:600}
+.team small{font-weight:400;color:var(--muted)}
+
+/* footer */
+.foot{text-align:center;padding:12px;color:var(--muted);font-size:13px}
+
+/* UTILS */
+.hidden{display:none}
+
+/* show/hide mobile nav by toggling .show */
+.mobile-nav{display:none}
+.mobile-nav.show{display:flex}
+@media (min-width:700px){
+  /* For larger screens we'll keep it mobile style but show nav horizontally (still usable) */
+  .mobile-nav{display:flex;flex-direction:row;gap:12px;background:transparent;padding:0}
+  .mobile-nav .nav-item{background:transparent;color:white}
+  main{max-width:720px;margin:12px auto}
+}
+
+/* ====== MATCH CARDS ====== */
+.match-card {
+  background: #f7f7f7;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
